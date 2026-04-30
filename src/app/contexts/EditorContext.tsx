@@ -8,15 +8,8 @@ import {
 } from 'react';
 import { useEngine } from './EngineContext';
 import { hexToRgba } from '../../imgly/ColorUtilities';
+import { resolveAssetPath } from '../../imgly/resolveAssetPath';
 import { useSinglePageMode } from './SinglePageModeContext';
-
-const assetPath = (path: string): string => {
-  if (path.startsWith('http://') || path.startsWith('https://')) {
-    return path;
-  }
-  return new URL(import.meta.env.BASE_URL + path.slice(1), window.location.href)
-    .href;
-};
 
 export const ALL_STEPS = ['edit', 'preview'] as const;
 type Step = (typeof ALL_STEPS)[number];
@@ -44,7 +37,7 @@ export const EditorProvider = ({ children }: { children: React.ReactNode }) => {
       if (engineIsLoaded) {
         setEnabled(false);
         setSceneIsLoaded(false);
-        await engine.scene.loadFromURL(assetPath('/kiosk.scene'));
+        await engine.scene.loadFromURL(resolveAssetPath('/kiosk.scene'));
         const pages = engine.scene.getPages();
         setCurrentPageBlockId(pages[0]);
         setEnabled(true);
