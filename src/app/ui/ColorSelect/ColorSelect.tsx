@@ -7,10 +7,8 @@ import {
   rgbaToHex
 } from '../../../imgly/ColorUtilities';
 import AdjustmentsBar from '../AdjustmentsBar/AdjustmentsBar';
+import { resolveAssetPath } from '../../../imgly/resolveAssetPath';
 import classes from './ColorSelect.module.css';
-
-// Asset path helper - returns path relative to public/
-const assetPath = (path: string) => path;
 
 interface ColorSelectProps {
   colorPalette: Array<RGBAColor>;
@@ -62,7 +60,7 @@ const ColorSelect = ({
         value={rgbaToHex(activeColor)}
       >
         <button className={classes.colorButton}>
-          <img src={assetPath('/ColorPicker.png')} alt={'Pick color'} />
+          <img src={resolveAssetPath('/ColorPicker.png')} alt={'Pick color'} />
         </button>
       </ColorPicker>
     </AdjustmentsBar>
