@@ -8,6 +8,7 @@ import { SinglePageModeProvider } from './contexts/SinglePageModeContext';
 import { SelectionProvider } from './contexts/UseSelection';
 import createUnsplashSource from '../imgly/UnsplashSource';
 import {
+  ImageColorsAssetSource,
   ColorPaletteAssetSource,
   DemoAssetSources,
   StickerAssetSource,
@@ -59,6 +60,7 @@ const App = ({ engineConfig }: AppProps) => {
             configure={async (engine) => {
               setEngine(engine);
               engine.editor.setSetting('page/title/show', false);
+              await engine.addPlugin(new ImageColorsAssetSource());
               await engine.addPlugin(new ColorPaletteAssetSource());
               await engine.addPlugin(new StickerAssetSource());
               await engine.addPlugin(new TypefaceAssetSource());
