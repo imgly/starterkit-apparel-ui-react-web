@@ -11,6 +11,7 @@ import { hexToRgba } from '../../imgly/ColorUtilities';
 import { resolveAssetPath } from '../../imgly/resolveAssetPath';
 import { useSinglePageMode } from './SinglePageModeContext';
 
+
 export const ALL_STEPS = ['edit', 'preview'] as const;
 type Step = (typeof ALL_STEPS)[number];
 interface EditorContextType {
