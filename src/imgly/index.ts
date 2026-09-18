@@ -14,7 +14,7 @@ export {
   getImageSize
 } from './CreativeEngineUtils';
 export { default as createUnsplashSource } from './UnsplashSource';
-export { useEditMode } from './UseEditMode';
-export { useHistory } from './UseHistory';
-export { useImageUpload } from './UseImageUpload';
-export { useProperty, useSelectedProperty } from './UseSelectedProperty';
+export {
+  default as createImageColorsSource,
+  IMAGE_COLORS_SOURCE_ID
+} from './ImageColorsSource';
