@@ -89,7 +89,7 @@ export const autoPlaceBlockOnPage = (
   engine.block.setPositionXMode(block, 'Absolute');
   engine.block.setPositionX(block, posX);
 
-  const pageHeight = engine.block.getWidth(page);
+  const pageHeight = engine.block.getHeight(page);
   const posY =
     pageHeight * (config.basePosY + Math.random() * config.randomPosY);
   engine.block.setPositionYMode(block, 'Absolute');
