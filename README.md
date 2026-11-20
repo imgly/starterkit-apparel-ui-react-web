@@ -55,15 +55,12 @@ npm run preview
 src/
 ├── app/                          # Demo application
 ├── imgly/
-│   ├── color-utilities.ts
-│   ├── creative-engine-utils.ts
-│   ├── image-colors-source.ts
-│   ├── unsplash-source.ts
-│   ├── UseEditMode.ts
-│   ├── UseHistory.ts
-│   ├── UseImageUpload.ts
-│   ├── UseSelectedProperty.ts
-│   └── index.ts                  # Editor initialization function
+│   ├── index.ts                  # Editor initialization function
+│   ├── demo-assets.ts            # Demo asset URLs
+│   ├── color-utilities.ts        # Color helpers
+│   ├── creative-engine-utils.ts  # Engine helpers
+│   ├── image-colors-source.ts    # Image colors asset source
+│   └── unsplash-source.ts        # Unsplash asset source
 └── index.tsx                 # Application entry point
 ```
 
